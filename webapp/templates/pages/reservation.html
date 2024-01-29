@@ -1,0 +1,42 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reservation</title>
+    </head>
+    <body>
+        {% block content %}
+        <h1>Total of Reservations: {{total_reservation}}</h1>
+       
+        <table>
+            <tr>
+            
+                <th>Customer name</th>
+                <th>Number of customer</th>
+                <th>Time</th>
+                <th>Date</th>
+            </tr>
+            <tr>
+                {% for abc in reservations %}
+                <td>{{abc.customer_name}}</td>
+                <td>{{abc.number_of_customer}}</td>
+                <td>{{abc.Time}}</td>
+                <td>{{abc.Date}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+       <br>
+       <br>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" name="Submit">
+        </form>
+ 
+
+      
+
+        {% endblock %}
+    </body>
+</html>

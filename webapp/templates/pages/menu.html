@@ -1,0 +1,21 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>menu</title>
+    </head>
+    <body>
+        {% block content %}
+        <section class="about-us">
+            <div class="about">
+              <img src="{% static '/images/meow.jpg' %}" class="pic">
+              <div class="text">
+                <h2>About Us</h2>
+                  <p>A cat cafe is the cats' foster home. It's a safe place for them to stay until they are adopted. And while they're here, they're being socialized: living and playing with their fellow cats, and also learning about all the humans who come to visit them.</p>
+              </div>
+            </div>
+          </section>
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,40 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Feedback</title>
+    </head>
+    <body>
+        {% block content %}
+        <h1>Feedback</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" name="Submit">
+        </form>
+        <div class="container">
+            <h2> Our Happy Customer</h2>
+         
+             
+
+            <div class="reviewSection">
+
+            {% for abc in feedbacks %}
+                <div class="reviewItem">
+                    <div class="top">
+                        <div class="clientImage">
+                            <h3>{{abc.customer}}</h3>
+                        </div>
+                        <ul>
+                            <li>Rate: {{abc.rate}}</li>
+                        </ul>
+                    </div>
+                    <article>
+                        <p class="review">{{abc.comment}}</p>
+                    </article>
+                </div>
+            {% endfor %}
+        {% endblock %}
+    </body>
+</html>
