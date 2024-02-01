@@ -11,18 +11,22 @@
        
         <table>
             <tr>
-            
+                <th>Id</th>
                 <th>Customer name</th>
                 <th>Number of customer</th>
                 <th>Time</th>
                 <th>Date</th>
+                <th>Edit</th>
             </tr>
             <tr>
-                {% for abc in reservations %}
-                <td>{{abc.customer_name}}</td>
-                <td>{{abc.number_of_customer}}</td>
-                <td>{{abc.Time}}</td>
-                <td>{{abc.Date}}</td>
+                {% for customer in reservations %}
+                <td>{{customer.id}}</td>
+                <td>{{customer.customer_name}}</td>
+                <td>{{customer.number_of_customer}}</td>
+                <td>{{customer.Time}}</td>
+                <td>{{customer.Date}}</td>
+                <td><a href="{% url 'updateReservation' customer.id %}">Update</a></td>
+                <td><a href="{% url 'deleteReservation' customer.id %}">Delete</a></td>
             </tr>
             {% endfor %}
         </table>
